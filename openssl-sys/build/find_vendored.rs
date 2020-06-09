@@ -1,8 +1,10 @@
-use openssl_src;
+#[cfg(feature = "vendored")]
+use libressl_src as src;
+
 use std::path::PathBuf;
 
 pub fn get_openssl(_target: &str) -> (PathBuf, PathBuf) {
-    let artifacts = openssl_src::Build::new().build();
+    let artifacts = src::Build::new().build();
     println!("cargo:vendored=1");
     println!(
         "cargo:root={}",
