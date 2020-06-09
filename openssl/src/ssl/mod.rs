@@ -8,7 +8,7 @@
 //! To connect as a client to a remote server:
 //!
 //! ```no_run
-//! use openssl::ssl::{SslMethod, SslConnector};
+//! use libressl::ssl::{SslMethod, SslConnector};
 //! use std::io::{Read, Write};
 //! use std::net::TcpStream;
 //!
@@ -26,7 +26,7 @@
 //! To accept connections as a server from remote clients:
 //!
 //! ```no_run
-//! use openssl::ssl::{SslMethod, SslAcceptor, SslStream, SslFiletype};
+//! use libressl::ssl::{SslMethod, SslAcceptor, SslStream, SslFiletype};
 //! use std::net::{TcpListener, TcpStream};
 //! use std::sync::Arc;
 //! use std::thread;
@@ -229,7 +229,7 @@ bitflags! {
         /// Only support TLSv1.2:
         ///
         /// ```rust
-        /// use openssl::ssl::SslOptions;
+        /// use libressl::ssl::SslOptions;
         ///
         /// let options = SslOptions::NO_SSL_MASK & !SslOptions::NO_TLSV1_2;
         /// ```

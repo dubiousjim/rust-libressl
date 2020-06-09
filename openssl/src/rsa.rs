@@ -17,9 +17,9 @@
 //!
 //! ```rust
 //!
-//! extern crate openssl;
+//! extern crate libressl;
 //!
-//! use openssl::rsa::{Rsa, Padding};
+//! use libressl::rsa::{Rsa, Padding};
 //!
 //! fn main() {
 //!     let rsa = Rsa::generate(2048).unwrap();

@@ -14,10 +14,10 @@
 //! you can create a hasher that you can repeatedly update to add bytes to.
 //!
 //! ```rust
-//! extern crate openssl;
+//! extern crate libressl;
 //! extern crate hex;
 //!
-//! use openssl::sha;
+//! use libressl::sha;
 //!
 //! fn main() {
 //!     let mut hasher = sha::Sha256::new();
@@ -35,10 +35,10 @@
 //! to the algorithm you want to use.
 //!
 //! ```rust
-//! extern crate openssl;
+//! extern crate libressl;
 //! extern crate hex;
 //!
-//! use openssl::sha::sha256;
+//! use libressl::sha::sha256;
 //!
 //! fn main() {
 //!     let hash = sha256(b"your data or message");

@@ -46,7 +46,7 @@ impl Conf {
     /// # Examples
     ///
     /// ```
-    /// use openssl::conf::{Conf, ConfMethod};
+    /// use libressl::conf::{Conf, ConfMethod};
     ///
     /// let conf = Conf::new(ConfMethod::default());
     /// ```

@@ -8,10 +8,10 @@
 //! # Example
 //!
 //! ```rust
-//! extern crate openssl;
+//! extern crate libressl;
 //!
-//! use openssl::x509::extension::BasicConstraints;
-//! use openssl::x509::X509Extension;
+//! use libressl::x509::extension::BasicConstraints;
+//! use libressl::x509::X509Extension;
 //!
 //! fn main() {
 //!     let mut bc = BasicConstraints::new();

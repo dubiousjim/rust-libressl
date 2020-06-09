@@ -1,19 +1,19 @@
 //! A program that generates ca certs, certs verified by the ca, and public
 //! and private keys.
 
-extern crate openssl;
+extern crate libressl;
 
-use openssl::asn1::Asn1Time;
-use openssl::bn::{BigNum, MsbOption};
-use openssl::error::ErrorStack;
-use openssl::hash::MessageDigest;
-use openssl::pkey::{PKey, PKeyRef, Private};
-use openssl::rsa::Rsa;
-use openssl::x509::extension::{
+use libressl::asn1::Asn1Time;
+use libressl::bn::{BigNum, MsbOption};
+use libressl::error::ErrorStack;
+use libressl::hash::MessageDigest;
+use libressl::pkey::{PKey, PKeyRef, Private};
+use libressl::rsa::Rsa;
+use libressl::x509::extension::{
     AuthorityKeyIdentifier, BasicConstraints, KeyUsage, SubjectAlternativeName,
     SubjectKeyIdentifier,
 };
-use openssl::x509::{X509NameBuilder, X509Ref, X509Req, X509ReqBuilder, X509VerifyResult, X509};
+use libressl::x509::{X509NameBuilder, X509Ref, X509Req, X509ReqBuilder, X509VerifyResult, X509};
 
 /// Make a CA certificate and private key
 fn mk_ca_cert() -> Result<(X509, PKey<Private>), ErrorStack> {

@@ -145,7 +145,7 @@ use self::State::*;
 /// Calculate a hash in one go:
 ///
 /// ```
-/// use openssl::hash::{hash, MessageDigest};
+/// use libressl::hash::{hash, MessageDigest};
 ///
 /// let data = b"\x42\xF4\x97\xE0";
 /// let spec = b"\x7c\x43\x0f\x17\x8a\xef\xdf\x14\x87\xfe\xe7\x14\x4e\x96\x41\xe2";
@@ -156,7 +156,7 @@ use self::State::*;
 /// Supply the input in chunks:
 ///
 /// ```
-/// use openssl::hash::{Hasher, MessageDigest};
+/// use libressl::hash::{Hasher, MessageDigest};
 ///
 /// let data = [b"\x42\xF4", b"\x97\xE0"];
 /// let spec = b"\x7c\x43\x0f\x17\x8a\xef\xdf\x14\x87\xfe\xe7\x14\x4e\x96\x41\xe2";
@@ -172,7 +172,7 @@ use self::State::*;
 /// ```
 /// #[cfg(ossl111)]
 /// {
-///     use openssl::hash::{hash_xof, MessageDigest};
+///     use libressl::hash::{hash_xof, MessageDigest};
 ///
 ///     let data = b"\x41\x6c\x6c\x20\x79\x6f\x75\x72\x20\x62\x61\x73\x65\x20\x61\x72\x65\x20\x62\x65\x6c\x6f\x6e\x67\x20\x74\x6f\x20\x75\x73";
 ///     let spec = b"\x49\xd0\x69\x7f\xf5\x08\x11\x1d\x8b\x84\xf1\x5e\x46\xda\xf1\x35";

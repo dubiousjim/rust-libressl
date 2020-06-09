@@ -7,14 +7,14 @@
 //!
 //! ```rust
 //!
-//! extern crate openssl;
+//! extern crate libressl;
 //!
-//! use openssl::x509::store::{X509StoreBuilder, X509Store};
-//! use openssl::x509::{X509, X509Name};
-//! use openssl::pkey::PKey;
-//! use openssl::hash::MessageDigest;
-//! use openssl::rsa::Rsa;
-//! use openssl::nid::Nid;
+//! use libressl::x509::store::{X509StoreBuilder, X509Store};
+//! use libressl::x509::{X509, X509Name};
+//! use libressl::pkey::PKey;
+//! use libressl::hash::MessageDigest;
+//! use libressl::rsa::Rsa;
+//! use libressl::nid::Nid;
 //!
 //! fn main() {
 //!     let rsa = Rsa::generate(2048).unwrap();

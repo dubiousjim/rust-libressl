@@ -24,8 +24,8 @@
 //!
 //! ## AES IGE
 //! ```rust
-//! use openssl::aes::{AesKey, aes_ige};
-//! use openssl::symm::Mode;
+//! use libressl::aes::{AesKey, aes_ige};
+//! use libressl::symm::Mode;
 //!
 //! let key = b"\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F";
 //! let plaintext = b"\x12\x34\x56\x78\x90\x12\x34\x56\x12\x34\x56\x78\x90\x12\x34\x56";
@@ -40,7 +40,7 @@
 //!
 //! ## Key wrapping
 //! ```rust
-//! use openssl::aes::{AesKey, unwrap_key, wrap_key};
+//! use libressl::aes::{AesKey, unwrap_key, wrap_key};
 //!
 //! let kek = b"\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F";
 //! let key_to_wrap = b"\x00\x11\x22\x33\x44\x55\x66\x77\x88\x99\xAA\xBB\xCC\xDD\xEE\xFF";

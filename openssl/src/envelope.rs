@@ -4,12 +4,12 @@
 //!
 //! ```rust
 //!
-//! extern crate openssl;
+//! extern crate libressl;
 //!
-//! use openssl::rsa::Rsa;
-//! use openssl::envelope::Seal;
-//! use openssl::pkey::PKey;
-//! use openssl::symm::Cipher;
+//! use libressl::rsa::Rsa;
+//! use libressl::envelope::Seal;
+//! use libressl::pkey::PKey;
+//! use libressl::symm::Cipher;
 //!
 //! fn main() {
 //!     let rsa = Rsa::generate(2048).unwrap();

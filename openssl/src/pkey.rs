@@ -30,10 +30,10 @@
 //!
 //! ```rust
 //!
-//! extern crate openssl;
+//! extern crate libressl;
 //!
-//! use openssl::rsa::Rsa;
-//! use openssl::pkey::PKey;
+//! use libressl::rsa::Rsa;
+//! use libressl::pkey::PKey;
 //! use std::str;
 //!
 //! fn main() {

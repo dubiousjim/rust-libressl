@@ -1,6 +1,6 @@
-use openssl::error::Error;
+use libressl::error::Error;
 
-openssl_errors::openssl_errors! {
+libressl_errors::openssl_errors! {
     library Test("test library") {
         functions {
             FOO("function foo");
@@ -16,7 +16,7 @@ openssl_errors::openssl_errors! {
 
 #[test]
 fn basic() {
-    openssl_errors::put_error!(Test::FOO, Test::NO_MILK);
+    libressl_errors::put_error!(Test::FOO, Test::NO_MILK);
 
     let error = Error::get().unwrap();
     assert_eq!(error.library().unwrap(), "test library");
@@ -29,7 +29,7 @@ fn basic() {
 
 #[test]
 fn static_data() {
-    openssl_errors::put_error!(Test::BAR, Test::NO_BACON, "foobar");
+    libressl_errors::put_error!(Test::BAR, Test::NO_BACON, "foobar");
 
     let error = Error::get().unwrap();
     assert_eq!(error.library().unwrap(), "test library");
@@ -42,7 +42,7 @@ fn static_data() {
 
 #[test]
 fn dynamic_data() {
-    openssl_errors::put_error!(Test::BAR, Test::NO_MILK, "hello {}", "world");
+    libressl_errors::put_error!(Test::BAR, Test::NO_MILK, "hello {}", "world");
 
     let error = Error::get().unwrap();
     assert_eq!(error.library().unwrap(), "test library");
