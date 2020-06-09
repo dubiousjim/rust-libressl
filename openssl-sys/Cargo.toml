@@ -1,25 +1,26 @@
 [package]
-name = "openssl-sys"
-version = "0.9.58"
+name = "libressl-sys"
+version = "0.9.57"
 authors = ["Alex Crichton <alex@alexcrichton.com>",
-           "Steven Fackler <sfackler@gmail.com>"]
+           "Steven Fackler <sfackler@gmail.com>",
+           "Dubiousjim <dubiousjim@gmail.com>"]
 license = "MIT"
-description = "FFI bindings to OpenSSL"
-repository = "https://github.com/sfackler/rust-openssl"
+description = "FFI bindings to LibreSSL"
+repository = "https://github.com/dubiousjim/rust-libressl"
 readme = "README.md"
 categories = ["cryptography", "external-ffi-bindings"]
-links = "openssl"
+links = "libressl"
 build = "build/main.rs"
 
 [features]
-vendored = ['openssl-src']
+vendored = ['libressl-src']
 
 [dependencies]
 libc = "0.2"
 
 [build-dependencies]
 cc = "1.0"
-openssl-src = { version = "111.0.1", optional = true }
+libressl-src = { path = "../../libressl-src", version = "312.0.0", optional = true } # FIXME
 pkg-config = "0.3.9"
 autocfg = "1.0"
 
@@ -28,4 +29,4 @@ vcpkg = "0.2.8"
 
 # We don't actually use metadeps for annoying reasons but this is still here for tooling
 [package.metadata.pkg-config]
-openssl = "1.0.1"
+libressl = "1.0.1"
