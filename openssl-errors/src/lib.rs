@@ -5,8 +5,8 @@
 //! # Examples
 //!
 //! ```
-//! use openssl_errors::{openssl_errors, put_error};
-//! use openssl::error::Error;
+//! use libressl_errors::{openssl_errors, put_error};
+//! use libressl::error::Error;
 //!
 //! // Errors are organized at the top level into "libraries". The
 //! // openssl_errors! macro can define these.
@@ -55,7 +55,7 @@ use std::ptr;
 #[doc(hidden)]
 pub mod export {
     pub use libc::{c_char, c_int};
-    pub use openssl_sys::{
+    pub use libressl_sys::{
         init, ERR_get_next_error_library, ERR_load_strings, ERR_PACK, ERR_STRING_DATA,
     };
     pub use std::borrow::Cow;
@@ -119,7 +119,7 @@ pub unsafe fn __put_error<T>(
 ) where
     T: Library,
 {
-    openssl_sys::ERR_put_error(
+    libressl_sys::ERR_put_error(
         T::id(),
         func.as_raw(),
         reason.as_raw(),
@@ -129,7 +129,7 @@ pub unsafe fn __put_error<T>(
     let data = match message {
         Some(Cow::Borrowed(s)) => Some((s.as_ptr() as *const c_char as *mut c_char, 0)),
         Some(Cow::Owned(s)) => {
-            let ptr = openssl_sys::CRYPTO_malloc(
+            let ptr = libressl_sys::CRYPTO_malloc(
                 s.len() as _,
                 concat!(file!(), "\0").as_ptr() as *const c_char,
                 line!() as c_int,
@@ -138,13 +138,13 @@ pub unsafe fn __put_error<T>(
                 None
             } else {
                 ptr::copy_nonoverlapping(s.as_ptr(), ptr as *mut u8, s.len());
-                Some((ptr, openssl_sys::ERR_TXT_MALLOCED))
+                Some((ptr, libressl_sys::ERR_TXT_MALLOCED))
             }
         }
         None => None,
     };
     if let Some((ptr, flags)) = data {
-        openssl_sys::ERR_set_error_data(ptr, flags | openssl_sys::ERR_TXT_STRING);
+        libressl_sys::ERR_set_error_data(ptr, flags | libressl_sys::ERR_TXT_STRING);
     }
 }
 

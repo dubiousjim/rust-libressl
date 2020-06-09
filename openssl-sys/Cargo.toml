@@ -1,6 +1,6 @@
 [package]
 name = "libressl-sys"
-version = "0.9.57"
+version = "0.9.58"
 authors = ["Alex Crichton <alex@alexcrichton.com>",
            "Steven Fackler <sfackler@gmail.com>",
            "Dubiousjim <dubiousjim@gmail.com>"]
@@ -9,7 +9,7 @@ description = "FFI bindings to LibreSSL"
 repository = "https://github.com/dubiousjim/rust-libressl"
 readme = "README.md"
 categories = ["cryptography", "external-ffi-bindings"]
-links = "libressl"
+links = "openssl"
 build = "build/main.rs"
 
 [features]

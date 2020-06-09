@@ -1,4 +1,3 @@
-#[cfg(feature = "vendored")]
 use libressl_src as src;
 
 use std::path::PathBuf;

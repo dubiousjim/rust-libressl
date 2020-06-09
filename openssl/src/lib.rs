@@ -100,7 +100,7 @@
 //! lib.rs:
 //!
 //! ```
-//! use openssl::ssl::{SslConnector, SslMethod};
+//! use libressl::ssl::{SslConnector, SslMethod};
 //!
 //! let mut ctx = SslConnector::builder(SslMethod::tls()).unwrap();
 //!
@@ -119,7 +119,7 @@ extern crate foreign_types;
 #[macro_use]
 extern crate lazy_static;
 extern crate libc;
-extern crate openssl_sys as ffi;
+extern crate libressl_sys as ffi;
 
 #[cfg(test)]
 extern crate hex;
