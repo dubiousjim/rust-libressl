@@ -1,0 +1,20 @@
+[package]
+name = "libre-tls"
+version = "0.2.4"
+authors = ["Steven Fackler <sfackler@gmail.com>", "Dubiousjim <dubiousjim@gmail.com>"]
+license = "MIT/Apache-2.0"
+description = "A wrapper over LibreSSL's TLS implementation, matching native-tls"
+repository = "https://github.com/dubiousjim/rust-libressl"
+readme = "README.md"
+
+[features]
+vendored = ["libressl/vendored"]
+
+[dependencies]
+log = "0.4.5"
+libressl = { version = "0.10.29", path = "../openssl" }
+libressl-sys = { version = "0.9.58", path = "../openssl-sys" }
+openssl-probe = { version = "0.1", optional = true }
+
+[dev-dependencies]
+hex = "0.3"
