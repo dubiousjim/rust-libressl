@@ -1,21 +1,8 @@
-//! An abstraction over platform-specific TLS implementations.
+//! Derived from https://lib.rs/crates/native-tls,
+//! but always uses LibreSSL (via the `libressl` crate).
 //!
-//! Many applications require TLS/SSL communication in one form or another as
-//! part of their implementation, but finding a library for this isn't always
-//! trivial! The purpose of this crate is to provide a seamless integration
-//! experience on all platforms with a cross-platform API that deals with all
-//! the underlying details for you.
-//!
-//! # How is this implemented?
-//!
-//! This crate uses SChannel on Windows (via the `schannel` crate), Secure
-//! Transport on OSX (via the `security-framework` crate), and OpenSSL (via the
-//! `openssl` crate) on all other platforms. Future futures may also enable
-//! other TLS frameworks as well, but these initial libraries are likely to
-//! remain as the defaults.
-//!
-//! Note that this crate also strives to be secure-by-default. For example when
-//! using OpenSSL it will configure validation callbacks to ensure that
+//! Note that this crate strives to be secure-by-default.
+//! It will configure validation callbacks to ensure that
 //! hostnames match certificates, use strong ciphers, etc. This implies that
 //! this crate is *not* just a thin abstraction around the underlying libraries,
 //! but also an implementation that strives to strike reasonable defaults.
@@ -34,8 +21,7 @@
 //! # Cargo Features
 //!
 //! * `vendored` - If enabled, the crate will compile and statically link to a
-//!     vendored copy of OpenSSL. This feature has no effect on Windows and
-//!     macOS, where OpenSSL is not used.
+//!     vendored copy of LibreSSL.
 //!
 //! # Examples
 //!
@@ -170,7 +156,7 @@ impl Identity {
     /// root. The chain certificates should be in order from the leaf certificate towards the root.
     ///
     /// PKCS #12 archives typically have the file extension `.p12` or `.pfx`, and can be created
-    /// with the OpenSSL `pkcs12` tool:
+    /// with the LibreSSL `pkcs12` tool:
     ///
     /// ```bash
     /// openssl pkcs12 -export -out identity.pfx -inkey key.pem -in cert.pem -certfile chain_certs.pem
