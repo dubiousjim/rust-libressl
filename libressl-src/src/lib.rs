@@ -111,8 +111,9 @@ impl Build {
         cfg.disable_shared();
         cfg.out_dir(&install_dir);
         if target.starts_with("i686-") && target.contains("-linux") {
-            cfg.free_host(target);
+            cfg.config_option("host", Some(target));
             /*
+            cfg.free_host(target);
             // cfg.cflag("-m32");
             } else if target.ends_with("-musl") {
                 cfg.free_host(target);
