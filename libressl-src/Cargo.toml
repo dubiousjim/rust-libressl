@@ -1,0 +1,13 @@
+[package]
+name = "libressl-src"
+version = "312.0.0" # "312.0.0+3.1.2"
+authors = ["Dubiousjim <dubiousjim@gmail.com>"]
+license = "MIT/Apache-2.0"
+description = "Source of LibreSSL and logic to build it."
+repository = "https://github.com/dubiousjim/rust-libressl"
+readme = "README.md"
+exclude = ['libressl/*']
+
+[dependencies]
+# autotools = { git = "https://github.com/lu-zero/autotools-rs" }
+autotools = { git = "https://github.com/dubiousjim/autotools-rs", branch = "experimental" }
