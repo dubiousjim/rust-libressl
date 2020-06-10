@@ -1,6 +1,6 @@
-extern crate native_tls;
+extern crate libre_tls;
 
-use native_tls::{Identity, TlsAcceptor, TlsStream};
+use libre_tls::{Identity, TlsAcceptor, TlsStream};
 use std::fs::File;
 use std::io::Read;
 use std::net::{TcpListener, TcpStream};

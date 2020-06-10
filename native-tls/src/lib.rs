@@ -28,7 +28,7 @@
 //! To connect as a client to a remote server:
 //!
 //! ```rust
-//! use native_tls::TlsConnector;
+//! use libre_tls::TlsConnector;
 //! use std::io::{Read, Write};
 //! use std::net::TcpStream;
 //!
@@ -46,7 +46,7 @@
 //! To accept connections as a server from remote clients:
 //!
 //! ```rust,no_run
-//! use native_tls::{Identity, TlsAcceptor, TlsStream};
+//! use libre_tls::{Identity, TlsAcceptor, TlsStream};
 //! use std::fs::File;
 //! use std::io::{Read};
 //! use std::net::{TcpListener, TcpStream};
@@ -416,7 +416,7 @@ impl TlsConnectorBuilder {
 /// # Examples
 ///
 /// ```rust
-/// use native_tls::TlsConnector;
+/// use libre_tls::TlsConnector;
 /// use std::io::{Read, Write};
 /// use std::net::TcpStream;
 ///
@@ -518,7 +518,7 @@ impl TlsAcceptorBuilder {
 /// # Examples
 ///
 /// ```rust,no_run
-/// use native_tls::{Identity, TlsAcceptor, TlsStream};
+/// use libre_tls::{Identity, TlsAcceptor, TlsStream};
 /// use std::fs::File;
 /// use std::io::{Read};
 /// use std::net::{TcpListener, TcpStream};
