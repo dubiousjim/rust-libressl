@@ -1,4 +1,5 @@
 extern crate libressl;
+#[cfg(feature = "openssl-probe")]
 extern crate openssl_probe;
 
 use self::libressl::error::ErrorStack;
@@ -14,6 +15,7 @@ use self::libressl::x509::{X509, store::X509StoreBuilder, X509VerifyResult};
 use std::error;
 use std::fmt;
 use std::io;
+#[cfg(feature = "openssl-probe")]
 use std::sync::Once;
 
 use {Protocol, TlsAcceptorBuilder, TlsConnectorBuilder};
@@ -89,6 +91,7 @@ fn supported_protocols(
     Ok(())
 }
 
+#[cfg(feature = "openssl-probe")]
 fn init_trust() {
     static ONCE: Once = Once::new();
     ONCE.call_once(openssl_probe::init_ssl_cert_env_vars);
@@ -252,6 +255,7 @@ pub struct TlsConnector {
 
 impl TlsConnector {
     pub fn new(builder: &TlsConnectorBuilder) -> Result<TlsConnector, Error> {
+        #[cfg(feature = "openssl-probe")]
         init_trust();
 
         let mut connector = SslConnector::builder(SslMethod::tls())?;
