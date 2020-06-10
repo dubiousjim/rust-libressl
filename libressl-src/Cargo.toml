@@ -10,4 +10,4 @@ exclude = ['libressl/*']
 
 [dependencies]
 # autotools = { git = "https://github.com/lu-zero/autotools-rs" }
-autotools = { git = "https://github.com/dubiousjim/autotools-rs", branch = "experimental" }
+autotools = { git = "https://github.com/dubiousjim/autotools-rs", branch = "master" }
